@@ -22,5 +22,5 @@
 
 .byebug_history
 /.framgia-ci-reports/*.brakeman.html
-/config/database.yml
-/config/secrets.yml
+config/database.yml
+config/secrets.yml
