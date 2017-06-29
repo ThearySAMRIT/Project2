@@ -1,0 +1,31 @@
+<% provide :title, t(".edit") %>
+<h1><%= t ".title" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank"><%= t ".change" %></a>
+    </div>
+    <%= form_for(@user) do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :full_name %>
+      <%= f.text_field :full_name, class: "form-control" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :gender %>
+      <%= f.text_field :gender, class: "form-control" %>
+
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :content, t(".bio") %>
+      <%= f.text_area :content, class: "form-control" %>
+
+      <%= f.submit t(".save"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

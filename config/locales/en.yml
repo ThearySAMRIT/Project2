@@ -22,3 +22,37 @@ en:
       signup: "Sign Up"
       login: "Log In"
       post: "Show All Post"
+  sessions:
+    create:
+      invalid: "Invalid email/password combination"
+      done: "Success log in"
+    new:
+      login: "Log in"
+      signup: "Sign Up now!"
+      newuser: "New user!"
+  users:
+    show:
+      info: " No User Have been found"
+    new:
+      signup: "Sign Up"
+      create: "Create my account"
+    create:
+      welcom: "Welcom to Kagaroo!"
+      wrong: "You have somthing wrong, Please check!"
+    update:
+      updated: "Your profile has been updated"
+    create:
+      deleted: "User deleted"
+    index:
+      all: "All Users"
+    edit:
+      edit: "Edit Profile"
+      title: "Update your profile"
+      bio: "Your Bio"
+      save: "Save change"
+      change: "Change"
+  shared:
+    error_messages:
+      message: "The form contains"
+      error: "error"
+      messages: "messages"

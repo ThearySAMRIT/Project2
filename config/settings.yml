@@ -1,0 +1,12 @@
+email:
+  maximum: 255
+user:
+  maximum: 50
+password:
+  minimum: 6
+content:
+  maximum: 140
+gravatar:
+  size: 50
+per_page:
+  maximum: 10
