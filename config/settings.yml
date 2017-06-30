@@ -1,0 +1,18 @@
+email:
+  maximum: 255
+user:
+  maximum: 50
+password:
+  minimum: 6
+content:
+  maximum: 140
+title:
+  maximum: 140
+gravatar:
+  size: 70
+profile:
+  size: 50
+post:
+  accept: "image/jpeg,image/gif,image/png"
+per_page:
+  maximum: 10
