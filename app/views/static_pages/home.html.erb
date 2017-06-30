@@ -1,29 +1,45 @@
 <%= provide :title, t(".title") %>
-<div class="jumbotron jumbotron-billboard">
-  <div class="img"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1><%= t ".social_media" %></h1>
-        <p><%= t ".slogan" %></p>
-        <a href="#" class="btn btn-success btn-lg"><%= t ".signup"%></a>
-        <a href="#" class="btn btn-success btn-lg"><%= t ".login"%></a>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="micropost_form">
+        <%= render "shared/post_form" %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3 class="text-center"><%= t ".new-feed" %></h3>
+      <%= render "shared/feed" %>
+    </div>
+  </div>
+<% else %>
+  <div class="jumbotron jumbotron-billboard">
+    <div class="img"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1><%= t ".social_media" %></h1>
+          <p><%= t ".slogan" %></p>
+          <%= link_to t(".signup"), signup_path, class: "btn btn-success btn-lg" %>
+          <%= link_to t(".login"), login_path, class: "btn btn-success btn-lg" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container1">
-  <div class="app">
-    <button class="btn btn-warning btn-xl"><%= t ".post" %></button>
-    <br /><br />
-    <pre>
-      <div class="card">
-        <div class="card-block">
-          <p class="card-text"></p>
+  <div class="container1">
+    <div class="app">
+      <button class="btn btn-warning btn-xl"><%= t ".post" %></button>
+      <pre>
+        <div class="card">
+          <div class="card-block">
+            <p class="card-text"></p>
+          </div>
         </div>
-      </div>
-    </pre>
+      </pre>
+    </div>
+    <button class="btn btn-warning btn-xl"><%= t ".post" %></button>
   </div>
-  <button class="btn btn-warning btn-xl"><%= t ".post" %></button>
-</div>
+<% end %>
