@@ -2,3 +2,23 @@ en:
   layouts:
     application:
       title: "Project2"
+      projectii: " | PROJECT II"
+    header:
+      social_media: "Kangaroo"
+      search: "Search"
+      home: "Home"
+      login: "Login"
+      users: "All Users"
+      search1: "Search..."
+    footer:
+      copyright: "© 2017 by Terry, more about developer"
+      btop: "Back to Home"
+      click: "Click here!"
+  static_pages:
+    home:
+      title: "Home"
+      social_media: "Kangaroo"
+      slogan: "Where you can share your everything."
+      signup: "Sign Up"
+      login: "Log In"
+      post: "Show All Post"

@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to t(".social_media"), root_path, class: "logo" %>
+    <nav>
+      <ul class="navbar-nav navbar-right">
+        <li><%= search_field_tag t(".search"), nil, class: "form-control",
+          placeholder: t(".search") %></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to t(".home"), root_path %></li>
+        <li><%= link_to t(".users"), "#" %></li>
+        <li><%= link_to t(".login"), "#" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
