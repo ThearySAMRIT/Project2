@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "config", "~> 1.4"
+gem "devise", "~> 4.2"
 gem "rails", "~> 5.1.2"
 gem "sqlite3"
 gem "puma", "~> 3.7"
@@ -51,7 +52,11 @@ group :test do
   gem "simplecov", require: false
   gem "simplecov-rcov", require: false
   gem "simplecov-json"
-  gem "shoulda-matchers"
+  gem "shoulda-matchers", "< 3.0.0", require: false
+end
+
+group :production do
+  gem "pg", "0.20.0"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
