@@ -78,3 +78,8 @@ en:
       destroy:
         delete: "Post has been deleted"
         undeleted: "Something wrong can't delete"
+      index:
+        edit: "Edit"
+        comment: "Comment"
+        delete: "Delete"
+        confirm: "Are you sure?"

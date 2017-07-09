@@ -1,0 +1,12 @@
+<% provide :title, t(".all-posts") %>
+<h2>All Posts</h2>
+<% @posts.each_slice(2) do |post1, post2| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= render post1 %>
+      </div>
+      <div class="col-md-6">
+        <%= render post2 unless post2.nil? %>
+      </div>
+    </div>
+  <% end %>

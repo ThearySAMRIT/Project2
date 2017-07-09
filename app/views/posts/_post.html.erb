@@ -1,7 +1,7 @@
 <div class="tweetEntry-tweetHolder">
-  <h3 class="tweetEntry" style="margin-bottom:0px;">
-    <span class="title"><%= post.title %></span>
+  <h3 class="tweetEntry">
     <%= link_to gravatar_for(post.user), post.user %>
+    <span class="title"><%= post.title %></span>
   </h3>
   <div class="tweetEntry">
     <div class="tweetEntry-content">
@@ -18,12 +18,14 @@
     </div>
     <div class="optionalMedia"><%= image_tag post.picture.url if post.picture? %></div>
     <div class="footer">
-      <% if current_user?(post.user) %>
+      <% if current_user? post.user %>
         <%= link_to "edit", edit_post_path(post), remote: :true, data: {toggle: "modal", target: "#myModal"}%>
-        <%= link_to "comment" %>
-        <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
-      <% elsif current_user.admin? %>
-      <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+        <%= link_to "comment", post %>
+        <%= link_to "delete", post, method: :delete, data: {confirm: "You sure?"} %>
+      <% else %>
+      <div class="tweetEntry-content">
+        <%= link_to "Comment", post %>
+      </div>
       <% end %>
     </div>
   </div>

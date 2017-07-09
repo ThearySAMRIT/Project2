@@ -180,3 +180,168 @@ input::-webkit-input-placeholder {
 .users.follow {
   padding: 0;
 }
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  background: url('http://unsplash.it/1200x800') center center no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+  opacity: .6;
+  }
+}
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+// Accordion Height
+$a-height: 250px;
+
+// Position text along bottom
+$text-offset: $a-height - 90;
+
+// Page Title
+h1 {
+  font-family:Montserrat,sans-serif;
+  color:#333;
+}
+
+.accordion {
+  height:$a-height;
+  margin:50px auto;
+  max-width:1080px;
+  overflow:hidden;
+  width:100%;
+
+  ul {
+    display:table;
+    margin:0;
+    padding:0;
+    table-layout:fixed;
+    width:100%;
+
+    li {
+      background-repeat:no-repeat;
+      background-position:center center;
+      display:table-cell;
+      height:$a-height;
+      position: relative;
+      transition:all 500ms ease;
+      vertical-align:bottom;
+      width:16.666%; // 6 into 100
+
+      div {
+        display:block;
+        overflow:hidden;
+        width:100%;
+
+        a {
+          box-sizing:border-box;
+          color:#fff;
+          display:block;
+          font-family:Open Sans, sans-serif;
+          height:$a-height;
+          position:relative;
+          padding:15px 20px;
+          text-decoration:none;
+          transition:all 200ms ease;
+          vertical-align:bottom;
+          width:100%;
+          z-index:3;
+
+          * {
+
+            margin:0;
+            opacity:0;
+            overflow:hidden;
+            position:relative;
+            text-overflow:ellipsis;
+            transition:all 400ms ease;
+            transform:translateX(-20px);
+            -webkit-transition:all 400ms ease;
+            -webkit-transform:translateX(-20px);
+            width:100%;
+            white-space:nowrap;
+            z-index:5;
+          }
+          h2 {
+            font-family:Montserrat,sans-serif;
+            font-size:24px;
+            margin-bottom:2px;
+            text-overflow:clip;
+            text-transform:uppercase;
+            top:$text-offset;
+          }
+          p {
+            font-size:13.5px;
+            top:$text-offset;
+          }
+        }
+      }
+    }
+    li:nth-child(1) { background-image:url('http://michael-ferry.com/assets/accordion1.jpg'); }
+    li:nth-child(2) { background-image:url('http://michael-ferry.com/assets/accordion2.jpg'); }
+    li:nth-child(3) { background-image:url('http://michael-ferry.com/assets/accordion3.jpg'); }
+    li:nth-child(4) { background-image:url('http://michael-ferry.com/assets/accordion4.jpg'); }
+    li:nth-child(5) { background-image:url('http://michael-ferry.com/assets/accordion5.jpg'); }
+    li:nth-child(6) { background-image:url('http://michael-ferry.com/assets/accordion6.jpg'); }
+    &:hover li { width:8%; }
+    &:hover li:hover {
+      width:60%;
+      a {
+        background:rgba(0,0,0,.4);
+        * {
+          opacity:1;
+          transform:translateX(0);
+          -webkit-transform:translateX(0);        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body { margin:0; }
+  .accordion {
+    height:auto;
+    ul,ul:hover {
+      li,li:hover {
+        position:relative;
+        display:table;
+        table-layout:fixed;
+        transition:none;
+        -webkit-transition:none;
+        width:100%;
+      }
+    }
+  }
+}
+.about {
+  color:#666;
+  font-family:'Open Sans', sans-serif;
+  font-size:12px;
+  text-align:center;
+
+    a {
+    color:blue;
+    text-decoration:none;
+    &:hover { text-decoration:underline; }
+  }
+}
+div.g-recaptcha {
+  margin-bottom: 10px;
+}
+

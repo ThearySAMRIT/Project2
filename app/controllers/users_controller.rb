@@ -1,23 +1,23 @@
 class UsersController < ApplicationController
 
-  before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :following,
+    :followers, :show]
+  before_action :correct_user, only: [:edit, :update, :create]
   before_action :verify_admin!, only: :destroy
-  before_action :logged_in_user, only: [:index, :edit, :update, :following, :followers]
 
   def index
-    @users = User.all
-    @users = User.paginate page: params[:page], per_page: Settings.per_page.maximum
+    @users = User.paginate page: params[:page], per_page:
+      Settings.per_page.maximum
   end
 
   def new
     @user = User.new
   end
 
-
   def create
     @user = User.new user_params
 
-    if @user.save && verify_recaptcha(model: @user)
+    if verify_recaptcha(model: @user) && @user.save
       log_in @user
       flash[:success] = t ".welcom"
       redirect_to @user
@@ -29,8 +29,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by id: params[:id]
-    @posts = @user.posts.paginate page: params[:page], per_page: Settings.per_page.maximum
-    if @user.nil?
+    @posts = @user.posts.paginate page: params[:page], per_page:
+      Settings.per_page.maximum
+    @comment = Comment.new
+
+    unless @user
       flash.now[:infor] = t ".info"
       render file: "public/404.html"
     end
