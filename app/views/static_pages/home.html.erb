@@ -34,7 +34,9 @@
 
   <div class="container1">
     <div class="app">
-      <button class="btn btn-warning btn-xl"><%= t ".post" %></button>
+      <button class="btn btn-warning btn-xl"><%= t ".post" %>
+        <li><%= link_to "Posts", posts_path %></li>
+      </button>
       <pre>
         <div class="card">
           <div class="card-block">

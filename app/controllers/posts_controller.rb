@@ -3,6 +3,10 @@ class PostsController < ApplicationController
   before_action :correct_user, only: :destroy
   before_action :verify_admin!, only: :destroy
 
+  def index
+    @posts = Post.all
+  end
+
   def create
     @post = current_user.posts.build post_params
 
