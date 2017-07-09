@@ -1,0 +1,18 @@
+<% provide :title, "Statistics" %>
+<h1>Statistics</h1>
+<div class="row">
+<div class="col-md-8" style="margin-top: 100px; margin-left: 200px">
+    <ul class="list-group">
+      <li class="list-group-item">Total users <span class="badge" id="total_users">
+        <%= @count[:users] %>
+      </span></li>
+      <li class="list-group-item">Total posts <span class="badge" id="total_posts">
+        <%= @count[:posts] %>
+      </span></li>
+      <li class="list-group-item">Total comments <span class="badge" id="total_comments">
+        <%= @count[:comments] %>
+      </span></li>
+    </ul>
+  <button class="btn btn-warning btn-xl">Get PDF</button>
+  </div>
+</div>

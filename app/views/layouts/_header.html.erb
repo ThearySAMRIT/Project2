@@ -3,8 +3,12 @@
     <%= link_to t(".social_media"), root_path, class: "logo" %>
     <nav>
       <ul class="navbar-nav navbar-right">
-        <li><%= search_field_tag t(".search"), nil, class: "formcontrol",
-          placeholder: t(".search1") %></li>
+      <div class="searchboxx">
+        <%= form_tag posts_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], class: "search-box",
+            placeholder: t(".search") %>
+        <% end %>
+      </div>
       </ul>
 
       <ul class="nav navbar-nav navbar-left">
@@ -22,6 +26,12 @@
             <li>
               <%= link_to t(".logout"), logout_path, method: :delete %>
             </li>
+            <% if current_user.admin? %>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Statistics", statistics_path %>
+              </li>
+            <% end %>
           </ul>
         </li>
         <% else %>
