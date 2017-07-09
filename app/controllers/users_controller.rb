@@ -1,18 +1,17 @@
 class UsersController < ApplicationController
 
+  before_action :logged_in_user, except: :show
   before_action :correct_user, only: [:edit, :update]
   before_action :verify_admin!, only: :destroy
-  before_action :logged_in_user, only: [:index, :edit, :update, :following, :followers]
 
   def index
-    @users = User.all
-    @users = User.paginate page: params[:page], per_page: Settings.per_page.maximum
+    @users = User.paginate page: params[:page], per_page:
+      Settings.per_page.maximum
   end
 
   def new
     @user = User.new
   end
-
 
   def create
     @user = User.new user_params
@@ -29,8 +28,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by id: params[:id]
-    @posts = @user.posts.paginate page: params[:page], per_page: Settings.per_page.maximum
-    if @user.nil?
+    @posts = @user.posts.paginate page: params[:page], per_page:
+      Settings.per_page.maximum
+    unless @user
       flash.now[:infor] = t ".info"
       render file: "public/404.html"
     end
