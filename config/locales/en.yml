@@ -10,6 +10,9 @@ en:
       login: "Login"
       users: "All Users"
       search1: "Search..."
+      account: "Account"
+      profile: "Profile"
+      setting: "Settings"
     footer:
       copyright: "© 2017 by Terry, more about developer"
       btop: "Back to Home"
@@ -22,3 +25,56 @@ en:
       signup: "Sign Up"
       login: "Log In"
       post: "Show All Post"
+      new-feed: "New feed"
+  sessions:
+    create:
+      invalid: "Invalid email/password combination"
+    new:
+      signup: "Sign up now!"
+      login: "Log in"
+  users:
+    edit:
+      edit-user: "Update Profile"
+      title: "Update your Profile"
+      save: "Save Changes"
+      bio: "Your Bio"
+      password: "Password"
+      change: "Change"
+    show:
+      info: " No User Have been found"
+      post: "Posts"
+    new:
+      signup: "Sign Up"
+      create: "Create my account"
+    create:
+      welcom: "Welcom to Kagaroo!"
+      wrong: "You have somthing wrong, Please check!"
+    update:
+      updated: "Your profile has been updated"
+    destroy:
+      destroied: "The User has benn deleted"
+      dangers: "Can't delete somthing wrong check again! "
+    index:
+      all-users: "All Users"
+      delete: "Delete"
+      confirm: "Are you sure ?"
+  shared:
+    error_messages:
+      message: "The form contains"
+      error: "error"
+      messages: "messages"
+    user_info:
+      posts: "Posts"
+      view: "View Profile"
+    post_form:
+      title: "Event Name"
+      content: "What's on your mind, share it with us....."
+    posts:
+      post:
+        posted: "Posted"
+        edited: "Edited"
+      form:
+        edit: "Edit your post"
+      destroy:
+        delete: "Post has been deleted"
+        undeleted: "Something wrong can't delete"

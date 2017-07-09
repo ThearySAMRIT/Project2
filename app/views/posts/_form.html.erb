@@ -1,0 +1,10 @@
+<%= form_for @post do |f| %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Event name" %>
+    <%= f.text_area :content, placeholder: "Compose new post..." %>
+  </div>
+  <%= f.submit " Edit Your Post", class: "btn btn-primary" %>
+  <span class="picture">
+    <%= f.file_field :picture, accept: Settings.post.accept %>
+  </span>
+<% end %>

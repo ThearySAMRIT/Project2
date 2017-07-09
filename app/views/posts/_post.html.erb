@@ -1,0 +1,30 @@
+<div class="tweetEntry-tweetHolder">
+  <h3 class="tweetEntry" style="margin-bottom:0px;">
+    <span class="title"><%= post.title %></span>
+    <%= link_to gravatar_for(post.user), post.user %>
+  </h3>
+  <div class="tweetEntry">
+    <div class="tweetEntry-content">
+      <strong class="tweetEntry-fullname">
+        <span class="user"><%= link_to post.user.full_name, post.user %></span>
+      </strong>
+      <span class="timestamp"><%= t ".posted" %> <%= time_ago_in_words post.created_at %> ago.
+      </span>
+      <span class="timestamp"><%= t ".edited" %><%= time_ago_in_words post.updated_at %> ago.
+      </span>
+      <div class="tweetEntry-text-container">
+        <span class="content"><%= post.content %></span>
+      </div>
+    </div>
+    <div class="optionalMedia"><%= image_tag post.picture.url if post.picture? %></div>
+    <div class="footer">
+      <% if current_user?(post.user) %>
+        <%= link_to "edit", edit_post_path(post), remote: :true, data: {toggle: "modal", target: "#myModal"}%>
+        <%= link_to "comment" %>
+        <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+      <% elsif current_user.admin? %>
+      <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
