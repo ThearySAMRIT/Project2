@@ -1,7 +1,15 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy, :edit]
-  before_action :correct_user, only: :destroy
-  before_action :verify_admin!, only: :destroy
+  before_action :logged_in_user, only: [:create, :destroy,]
+  before_action :verify_admin!, :correct_user, only: :destroy
+
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find_by id: params[:id]
+    @comments = @post.comments
+  end
 
   def create
     @post = current_user.posts.build post_params
@@ -13,10 +21,6 @@ class PostsController < ApplicationController
       @feed_items = []
       render "static_pages/home"
     end
-  end
-
-  def edit
-    @post = Post.find_by id: params[:id]
   end
 
   def update
@@ -31,9 +35,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    flash[:success] = t ".delete"
-    redirect_to request.referrer || root_url
+    if @post.find_by(id: params[:id]).destroy
+      flash[:success] = t ".delete"
+      redirect_to request.referrer || root_url
+    else
+      flash[:danger]
+      redirect_to root_url
   end
 
   private

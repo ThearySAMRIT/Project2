@@ -1,0 +1,38 @@
+<% provide :title, t(".all-posts") %>
+<h1><%= t ".all-posts" %></h1>
+
+<ul class="users">
+  <% @posts.each do |post| %>
+    <div class="tweetEntry-tweetHolder">
+      <h3 class="tweetEntry">
+        <span class="title"><%= post.title %></span>
+        <%= link_to gravatar_for(post.user), post.user %>
+      </h3>
+      <div class="tweetEntry">
+        <div class="tweetEntry-content">
+          <strong class="tweetEntry-fullname">
+            <span class="user"><%= link_to post.user.full_name, post.user %></span>
+          </strong>
+          <span class="timestamp"><%= t ".posted" %>
+            <%= time_ago_in_words post.created_at %><%= t ".ago" %>
+          </span>
+          <span class="timestamp"><%= t ".edited" %>
+            <%= time_ago_in_words post.updated_at %> <%= t ".ago" %>
+          </span>
+          <div class="tweetEntry-text-container">
+            <span class="content"><%= post.content %></span>
+          </div>
+        </div>
+        <div class="optionalMedia"><%= image_tag post.picture.url if post.picture? %></div>
+        <div class="footer">
+          <% if current_user? post.user %>
+            <%= link_to t(".edit"), edit_post_path(post), remote: :true,
+              data: {toggle: "modal", target: "#myModal"}%>
+            <%= link_to t(".comment") %>
+            <%= link_to t(".delete"), post, method: :delete, data: {confirm: t(".confirm")} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</ul>
