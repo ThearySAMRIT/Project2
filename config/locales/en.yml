@@ -69,12 +69,39 @@ en:
     post_form:
       title: "Event Name"
       content: "What's on your mind, share it with us....."
-    posts:
-      post:
-        posted: "Posted"
-        edited: "Edited"
-      form:
-        edit: "Edit your post"
-      destroy:
-        delete: "Post has been deleted"
-        undeleted: "Something wrong can't delete"
+    comment_form:
+      content: "What's on your mind, share it with us....."
+      comment: "Comment"
+  posts:
+    post:
+      posted: "Posted"
+      edited: "Edited"
+      ago: "ago"
+      delete: "Delete"
+      comment: "Comment"
+      edit: "Edit"
+      confirm: "Are you sure?"
+    form:
+      edit: "Edit your post"
+    destroy:
+      delete: "Post has been deleted"
+      undeleted: "Something wrong can't delete"
+    index:
+      edit: "Edit"
+      comment: "Comment"
+      delete: "Delete"
+      confirm: "Are you sure?"
+      ago: "ago"
+    show:
+      confirm: "Are you sure?"
+      ago: "ago"
+      delete: "Delete"
+      comment: "Comment"
+      edit: "Edit"
+      posted: " Posted "
+    comments:
+      comment:
+      confirm: "Are you sure?"
+      ago: "ago"
+      delete: "Delete"
+      replied: "Replide"
