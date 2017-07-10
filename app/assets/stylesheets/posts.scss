@@ -3,6 +3,7 @@
 .microposts {
   list-style: none;
   padding: 0;
+  margin-left: 100px;
   li {
     border-top: 1px solid #e8e8e8;
     padding: 10px;
@@ -20,9 +21,6 @@
     }
   }
   .gravatar {
-    float: left;
-    margin-left: 0px;
-    margin-top: 5px;
     width: 50px;
   }
 }

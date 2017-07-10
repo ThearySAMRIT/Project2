@@ -1,5 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
-  <li id="comment-<%= comment.id %>">
+  <li class="comment">
     <%= link_to gravatar_for(comment.user), comment.user %>
     <span class="user"><%= link_to comment.user.full_name, @post.user %></span>
     <span class="content"><%= comment.content %></span>\
@@ -13,4 +12,3 @@
       <% end %>
     <% end %>
   </li>
-</div>
