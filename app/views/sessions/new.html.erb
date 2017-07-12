@@ -1,19 +1,21 @@
 <% provide :title, t(".login") %>
 <h1><%= t ".login" %></h1>
+<div class="bg-img">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for :session, url: login_path do |f| %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for :session, url: login_path do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
+        <%= f.check_box :remember_me %><span class="remember-me">Remember me</span>
 
-      <%= f.submit t(".login"), class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to t(".signup"), signup_path %></p>
+        <%= f.submit t(".login"), class: "btn btn-primary" %>
+      <% end %>
+      <p><%= t ".new_user" %> <%= link_to t(".signup"), signup_path %></p>
+    </div>
   </div>
 </div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/statistics", to: "users#statistics"
 
   resources :users do
     member do
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
       get :followers
     end
   end
-  resources :posts, except: :show
+  resources :posts, except: [:following] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :relationships, only: [:create, :destroy]
 end

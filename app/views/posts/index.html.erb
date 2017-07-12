@@ -1,0 +1,14 @@
+<% provide :title, t(".all-posts") %>
+<h2><%= t ".all_post" %></h2>
+<%= will_paginate @users %>
+<% @posts.each_slice 2 do |post1, post2| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= render post1 %>
+    </div>
+    <div class="col-md-6">
+      <%= render post2 if post2 %>
+    </div>
+  </div>
+<% end %>
+<%= will_paginate @users %>

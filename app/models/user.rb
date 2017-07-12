@@ -22,6 +22,8 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  scope :search, ->search{where "title LIKE ?", "%#{search}%"}
+
   def feed
     following_ids = "SELECT followed_id FROM relationships
       WHERE  follower_id = :user_id"

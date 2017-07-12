@@ -1,3 +1,4 @@
+
 /* microposts */
 
 .microposts {
@@ -22,7 +23,8 @@
   .gravatar {
     float: left;
     margin-left: 0px;
-    margin-top: 5px;
+    margin-top: -20px;
+    width: 50px;
   }
 }
 
@@ -51,9 +53,13 @@ body {
   border-radius: 5px;
   border-right: 1px solid #e1e8ed;
   border-top: 1px solid #e1e8ed;
-  margin: auto;
-  width: 588px;
+  margin: 20px;
+  width: 570px;
   }
+
+div.tweetEntry-tweetHolder {
+  margin-left: -20px
+}
 
 /* The action list is optional. */
 .tweetEntry-action-list {
@@ -129,4 +135,11 @@ body {
   border-radius: 5px;
   max-width: 506px;
   max-height: 506px;
+}
+div.tweetEntry-tweetHolder {
+   margin-left: 100px;
+}
+
+img.gravatar {
+  margin-top: 30px;
 }

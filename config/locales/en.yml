@@ -32,6 +32,7 @@ en:
     new:
       signup: "Sign up now!"
       login: "Log in"
+      new_user: "New user?"
   users:
     edit:
       edit-user: "Update Profile"
@@ -69,12 +70,36 @@ en:
     post_form:
       title: "Event Name"
       content: "What's on your mind, share it with us....."
+    comment_form:
+      comment: "Comment"
+      write: "Write a comment..."
     posts:
       post:
         posted: "Posted"
         edited: "Edited"
+        comment: "Comment"
+        delete: "Delete"
+        edit: "Edit"
+        ago: "ago."
+        confirm: "Are you sure?"
       form:
         edit: "Edit your post"
       destroy:
         delete: "Post has been deleted"
         undeleted: "Something wrong can't delete"
+      index:
+        edit: "Edit"
+        comment: "Comment"
+        delete: "Delete"
+        confirm: "Are you sure?"
+        ago: "ago."
+        all_post: "All Posts"
+      show:
+        delete: "Delete"
+        confirm: "Are you sure?"
+    comments:
+      comment:
+        delete: "Delete"
+        confirm: "Are you sure?"
+        ago: "ago."
+        replied: "Replied "
